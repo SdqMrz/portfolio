@@ -23,9 +23,15 @@ namespace portfolio_project.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact(Contact form)
+        public IActionResult Contact(Contact model)
         {
-            var contact = form;
+            if(!ModelState.IsValid)
+            {
+                ViewBag.error = "اطلاعات وارد شده، صحیح نمیباشد، لطفا دوباره تلاش کنید.";
+                return View(model);
+            }
+            ViewBag.success = "اطلاعات با موفقیت ارسال شد.";
+
             return View();
         }
 
