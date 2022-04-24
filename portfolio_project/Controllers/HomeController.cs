@@ -15,8 +15,17 @@ namespace portfolio_project.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public IActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contact(Contact form)
+        {
+            var contact = form;
             return View();
         }
 
